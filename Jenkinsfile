@@ -17,12 +17,15 @@ pipeline {
 			}
 		}
 
-		post('Archiving'){
-			success{
-				archiveArtifacts artifacts: 'rectangle.jar', fingerprint: true
-			}
-		}
 
 
 	}
+
+	post{
+		success{
+			archiveArtifacts artifacts: 'rectangle.jar', fingerprint: true
+
+			}
+		}
+
 }
